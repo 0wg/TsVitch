@@ -22,25 +22,6 @@ for PKG in "${PKGS[@]}"; do
 done
 
 
-if [ -z "${GA_ID}" ] || [ -z "${GA_KEY}" ]; then
-    echo "GA_ID or GA_KEY not found in environment"
-    exit 1
-fi
-
-if [ -z "${SERVER_URL}" ]; then
-    echo "SERVER_URL not found in environment"
-    exit 1
-fi
-
-if [ -z "${SERVER_TOKEN}" ]; then
-    echo "SERVER_TOKEN not found in environment"
-    exit 1
-fi
-
-if [ -z "${M3U8_URL}" ]; then
-    echo "M3U8_URL not found in environment"
-    exit 1
-fi
 
 cmake -B ${BUILD_DIR} \
   -DCMAKE_BUILD_TYPE=Release \
