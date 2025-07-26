@@ -192,11 +192,7 @@ jobs:
             -DMAC_DOWNLOAD_DYLIB=ON \
             -DBRLS_UNITY_BUILD=${{ github.event.inputs.disable_unity_build == 'true' && 'OFF' || 'ON' }} \
             -DCMAKE_UNITY_BUILD_BATCH_SIZE=16 \
-            -DANALYTICS=ON \
-            -DANALYTICS_ID="${GA_ID}" \
-            -DANALYTICS_KEY="${GA_KEY}" \
-            -DSERVER_URL="${SERVER_URL}" \
-            -DSERVER_TOKEN="${SERVER_TOKEN}" \
+            -DANALYTICS=OFF \
             -DM3U8_URL="${M3U8_URL}"
           make -C build TsVitch.app -j$(sysctl -n hw.ncpu)
 
